@@ -1,0 +1,22 @@
+
+## descripción
+
+esta calculadora permite realizar operaciones simples como suma, resta, multiplicación y división.  
+su diseño es minimalista, con una interfaz centrada y colores suaves.
+
+## características
+
+- manejo básico de operaciones aritméticas  
+- interfaz responsiva y moderna  
+- botón "c" para limpiar la pantalla  
+- manejo de errores al evaluar expresiones
+
+## cómo usar
+
+1. abre `index.html` en tu navegador.  
+2. pulsa los botones numéricos y operadores para formar una expresión.  
+3. presiona `=` para ver el resultado o `c` para reiniciar.
+
+## créditos
+
+proyecto desarrollado con fines educativos.
