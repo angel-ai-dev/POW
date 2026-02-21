@@ -1,5 +1,6 @@
 // selecciona todos los botones con la clase .btn
 const botones = document.querySelectorAll('.btn');
+
 // selecciona el elemento de la pantalla
 const pantalla = document.querySelector('.pantalla');
 
@@ -15,13 +16,12 @@ botones.forEach(boton => {
             return;
         }
 
-        // si el botón es "igual", evalúa la operación
+        // si el botón es "igual", evalúa la operación con lógica propia
         if (boton.id === "igual") {
             try {
-                // evalúa el contenido de la pantalla
-                pantalla.textContent = eval(pantalla.textContent);
+                let resultado = calcular(pantalla.textContent);
+                pantalla.textContent = resultado;
             } catch {
-                // muestra error si hay una expresión inválida
                 pantalla.textContent = "error";
             }
             return;
@@ -37,3 +37,48 @@ botones.forEach(boton => {
 
     });
 });
+
+
+// función para calcular la expresión sin usar eval
+function calcular(expresion) {
+
+    // variable operador
+    let operador;
+
+    //asignacion
+    if (expresion.includes("+")) operador = "+";
+    else if (expresion.includes("-")) operador = "-";
+    else if (expresion.includes("*")) operador = "*";
+    else if (expresion.includes("/")) operador = "/";
+    // si no se devuelve lo mismo
+    else return expresion;
+
+    // divide la expresión en dos partes usando el operador encontrado
+    let partes = expresion.split(operador);
+
+    // si no hay 2 partes es error
+    if (partes.length !== 2) return "error";
+
+    // convierte los textos en números decimales
+    let num1 = parseFloat(partes[0]);
+    let num2 = parseFloat(partes[1]);
+
+    //si alguno no es valido error
+    if (isNaN(num1) || isNaN(num2)) return "error";
+
+    //operacion
+    switch (operador) {
+
+        case "+":
+            return num1 + num2;
+        case "-":
+            return num1 - num2;
+        case "*":
+            return num1 * num2;
+        case "/":
+            return num2 !== 0 ? num1 / num2 : "nuh uh";
+            
+        default:
+            return "error";
+    }
+}
