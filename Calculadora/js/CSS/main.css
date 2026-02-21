@@ -1,20 +1,23 @@
-* { margin: 0;
+/* elimina márgenes, rellenos y define la tipografía base */
+* { 
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
 }
 
-body{ 
+/* centra la calculadora vertical y horizontalmente */
+body { 
     min-height: 100vh;
     background-color: rgb(169, 142, 195);
     display: grid;
     place-items: center;
-  
 }
 
-.calculadora{
+/* estilo del contenedor principal */
+.calculadora {
     background-color: rgb(50, 26, 66);
-    color: rgb(255, 255, 255);
+    color: white;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     padding: 20px;
@@ -27,7 +30,8 @@ body{
     gap: 10px;
 }
 
-.pantalla{
+/* pantalla donde se muestra la operación */
+.pantalla {
     grid-column: 1 / -1;
     background-color: rgb(205, 197, 219);
     padding: 1.2rem;
@@ -37,21 +41,24 @@ body{
     border-radius: 1rem;
     font-family: monospace;
     font-weight: 600;
-
 }
 
-.btn{
+/* estilo general de los botones */
+.btn {
     background-color: rgb(205, 197, 219);
     border-radius: 1rem;
 }
-.btn:hover{
-    background-color: rgb(255, 255, 255);
+
+/* cambio de color al pasar el cursor */
+.btn:hover {
+    background-color: white;
 }
 
-#igual{
+/* color especial para el botón igual */
+#igual {
     background-color: rgb(160, 68, 134);
 }
 
-#igual:hover{
-    background-color: rgb(85, 53, 91)
+#igual:hover {
+    background-color: rgb(85, 53, 91);
 }
